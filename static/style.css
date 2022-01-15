@@ -194,6 +194,25 @@ body{
         font-size: 20px;
     }
 }
+/* contact page */
+
+.contact-page{
+    width:80%;
+    margin: auto;
+    text-align: center;
+    font-size: 14px;
+    color: var(--anchor);
+    line-height: 16px;
+}
+.contact-page h3{
+    color: var(--heading);
+}
+.contact-page h4{
+    color: var(--heading);
+}
+
+/* contact page end*/
+
 /* detail page end */
 
 

@@ -5,6 +5,9 @@ from django.core.paginator import Paginator
 
 from cart.forms import CartAddProductform
 
+def contact_page(request):
+    return render(request,'shop/contactpage.html')
+
 def product_list(request,category_slug=None):
     category = None
     categories = Category.objects.all()
@@ -26,4 +29,3 @@ def product_detail(request,id , slug):
     return render(request,'shop/detail.html',
     {'product':product,'cart_product_form':cart_product_form})
 
-    return render(request,'shop/detail.html',{'product':product})

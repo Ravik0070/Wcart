@@ -16,9 +16,7 @@
 <body>
     <div class="nav-container">
         <div class="logo">
-            <a href="{% url 'shop:product_list' %}">
-                <i class="fas fa-chair"></i>cart
-            </a>
+                <i class="fas fa-chair"></i><a href="{% url 'shop:product_list' %}">cart</a>
         </div>
 
         <!-- desktop menu -->
@@ -27,13 +25,9 @@
                 <a href="{% url 'shop:product_list' %}" class="nav-menu-list-anchor">
                     <li class="nav-menu-list-item">Home</li>
                 </a>
-                <a href="" class="nav-menu-list-anchor">
+                <a href="{% url 'shop:product_list' %}" class="nav-menu-list-anchor">
                     <li class="nav-menu-list-item">offers</li>
                 </a>
-                <a href="" class="nav-menu-list-anchor">
-                    <li class="nav-menu-list-item">Contact</li>
-                </a>
-                
             </ul>
         </div>
             <!-- desktop menu end-->
@@ -44,16 +38,13 @@
                     <a href="{% url 'shop:product_list' %}" class="mobile-menu-list-anchor">
                         <li class="mobile-menu-list-item">Home</li>
                     </a>
-                    <a href="" class="mobile-menu-list-anchor">
-                        <li class="mobile-menu-list-item">Contact us</li>
-                    </a>
-                    <a href="" class="mobile-menu-list-anchor">
+                    <a href="{% url 'shop:product_list' %}" class="mobile-menu-list-anchor">
                         <li class="mobile-menu-list-item">offers</li>
                     </a>
                     <a href="{% url 'cart:cart_detail' %}" class="mobile-menu-list-anchor">
                         <li class="mobile-menu-list-item"><i class="fas fa-shopping-cart"></i></li>
                     </a>
-                    <a href="" class="mobile-menu-list-anchor">
+                    <a href="{% url 'shop:contact_page' %}" class="mobile-menu-list-anchor">
                         <li class="mobile-menu-list-item"><i class="fas fa-user-circle"></i></li>
                     </a>
                 </ul>
@@ -74,7 +65,7 @@
                             {% endwith %}
                         </li>
                     </a>
-                    <a href="" class="nav-menu-list-anchor">
+                    <a href="{% url 'shop:contact_page' %}" class="nav-menu-list-anchor">
                         <li class="last-block-item"><i class="fas fa-user-circle"></i></li>
                     </a>
                 </ul>
