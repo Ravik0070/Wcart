@@ -16,8 +16,11 @@
 <body>
     <div class="nav-container">
         <div class="logo">
-            <i class="fas fa-chair"></i>cart
+            <a href="{% url 'shop:product_list' %}">
+                <i class="fas fa-chair"></i>cart
+            </a>
         </div>
+
         <!-- desktop menu -->
         <div class="nav-menu">
             <ul class="nav-menu-list">
