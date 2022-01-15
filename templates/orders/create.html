@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+Checkout
+{% endblock title %}
+
+{% block content %}
+
+    <div class="check-container-page">
+        <h1 class="check-heading">Checkout</h1>
+        {% if cart.get_total_price == 0  %}
+        <h2 class="check-para">Your cart is empty .</h2>
+        <a class="goto-shop-btn" href="{% url 'shop:product_list' %}">Continue Shopping</a>
+        {% else %}
+        <div class="checkout-summary">
+            <b>Your order : </b>
+            <ul>
+                {% for item in cart %}
+                <li>{{item.quantity}} x {{item.product.name}}
+                    <span>${{item.total_price}}</span>
+                </li>
+                {% endfor %}
+            </ul>
+            <p><b>Total:${{cart.get_total_price}}<b></p>
+        </div>
+        <form action="" method="post" class="form-div">
+            {{form.as_p}}
+            <p><input class="place-orderbtn" type="submit" value="Place order"></p>
+            {% csrf_token %}
+        </form>
+        {% endif %}
+    </div>
+
+{% endblock content %}
+
+

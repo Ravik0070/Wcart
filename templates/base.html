@@ -1,0 +1,139 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wcart | {% block title %}{% endblock title %}</title>
+    <link href="https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    <div class="nav-container">
+        <div class="logo">
+            <i class="fas fa-chair"></i>cart
+        </div>
+        <!-- desktop menu -->
+        <div class="nav-menu">
+            <ul class="nav-menu-list">
+                <a href="{% url 'shop:product_list' %}" class="nav-menu-list-anchor">
+                    <li class="nav-menu-list-item">Home</li>
+                </a>
+                <a href="" class="nav-menu-list-anchor">
+                    <li class="nav-menu-list-item">offers</li>
+                </a>
+                <a href="" class="nav-menu-list-anchor">
+                    <li class="nav-menu-list-item">Contact</li>
+                </a>
+                
+            </ul>
+        </div>
+            <!-- desktop menu end-->
+    
+            <!-- mobile-menu -->
+            <div class="mobile-menu2" id="mobile">
+                <ul class="mobile-menu-list">
+                    <a href="{% url 'shop:product_list' %}" class="mobile-menu-list-anchor">
+                        <li class="mobile-menu-list-item">Home</li>
+                    </a>
+                    <a href="" class="mobile-menu-list-anchor">
+                        <li class="mobile-menu-list-item">Contact us</li>
+                    </a>
+                    <a href="" class="mobile-menu-list-anchor">
+                        <li class="mobile-menu-list-item">offers</li>
+                    </a>
+                    <a href="{% url 'cart:cart_detail' %}" class="mobile-menu-list-anchor">
+                        <li class="mobile-menu-list-item"><i class="fas fa-shopping-cart"></i></li>
+                    </a>
+                    <a href="" class="mobile-menu-list-anchor">
+                        <li class="mobile-menu-list-item"><i class="fas fa-user-circle"></i></li>
+                    </a>
+                </ul>
+            </div>
+    
+            <!-- mobile-menu end -->
+    
+            <div class="cart-account">
+                <ul class="last-block">
+                    <a href="{% url 'cart:cart_detail' %}" class="nav-menu-list-anchor">
+                        <li class="last-block-item">
+                            {% with total_items=cart|length  %}
+                                {% if cart|length > 0  %}
+                                    {{total_items}} item{{total_items|pluralize}},${{cart.get_total_price}}
+                                {% else %}
+                                <i class="fas fa-shopping-cart"></i>
+                                {% endif %}
+                            {% endwith %}
+                        </li>
+                    </a>
+                    <a href="" class="nav-menu-list-anchor">
+                        <li class="last-block-item"><i class="fas fa-user-circle"></i></li>
+                    </a>
+                </ul>
+            </div>
+    
+            <div class="mobile-menu-toggle">
+                <button class="check"  onclick="menutoggle()">
+                    <i class="fas fa-bars checkbox"></i>
+                </button>
+            </div>
+    </div>
+
+        {% block content %}{% endblock content %}
+    
+    
+        <footer class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="footer-col">
+                        <h4>Company</h4>
+                        <ul>
+                            <li><a href="#">about us</a></li>
+                            <li><a href="#">our services</a></li>
+                            <li><a href="#">privacy policy</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>get help</h4>
+                        <ul>
+                            <li><a href="#">FAQ</a></li>
+                            <li><a href="#">Payment options</a></li>
+                            <li><a href="#">Delivery</a></li>
+                            <li><a href="#">Order status</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Online shop</h4>
+                        <ul>
+                            {% for c in categories  %}
+                            <li><a href="#">{{c.name}}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>follow</h4>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-facebook"></i></a>
+                            <a href=""><i class="fab fa-twitter"></i></a>
+                            <a href=""><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+    <script>
+        function menutoggle(){
+            if(document.getElementById("mobile").className == "mobile-menu1"){
+                document.getElementById("mobile").className = "mobile-menu2";}
+            else{
+                document.getElementById("mobile").className = "mobile-menu1";}
+        }
+    </script>
+</body>
+</html>
