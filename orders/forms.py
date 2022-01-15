@@ -1,5 +1,3 @@
-from tkinter import Widget
-from turtle import textinput
 from django import forms
 from django.forms import fields
 from orders.models import Order
