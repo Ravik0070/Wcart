@@ -35,7 +35,7 @@
                             </td>
                             <td>{{product.name}}</td>
                             <td>
-                                <form action="{% url 'cart:cart_add' product.id %}" method="post">
+                                <form class="update-form-input" action="{% url 'cart:cart_add' product.id %}" method="post">
                                     {{item.update_quantity_form.quantity}}
                                     {{item.update_quantity_form.update}}
                                     <input class="cart-updatebtn" type="submit" value="update">

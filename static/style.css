@@ -533,6 +533,20 @@ body{
     padding-bottom: 1em ;
 }
 
+@media(max-width:600px){
+    .success-page{
+        width:80%;
+        margin:auto;
+        text-align: center;
+        color: var(--anchor);
+
+    }
+    .success-page h1{
+        color:var(--heading);
+        padding-bottom: 1em ;
+    }
+    
+}
 /* success page end */
 
 
@@ -607,5 +621,90 @@ body{
     background-color: var(--highlightbg);
 }
 
+@media(max-width:500px){
+    .cart-block-container{
+        width:90%;
+        margin:auto;
+    }
+    .cart-block-heading{
+        font-size: 14px;
+        font-weight: bold;
+        margin-bottom: 1rem;
+    }
+    
+    .cart-table{
+        width:100%;
+        font-size:10px;
+    }
+    .cart-remove{
+        color:var(--anchor);
+    }
+    
+    .cart-table-heading{
+        background-color: var(--highlightbg);
+    }
+    .cart-table-heading tr th{
+        padding: 0.1em;
+        color:var(--anchor);
+    }
+    .cart-table-body {
+        background:var(--cardbg);
+        color:var(--anchor);
+        text-align: center;
+        padding:0.1em;
+    }
+    .cart-img-url .cart-item-img{
+        width:100%;
+        height:30px;
+        margin:0;
+    }
+    
+    .checkout-container{
+        display: flex;
+        justify-content: space-between;
+        padding:0.1em;
+    }
+    .add-to-cartbtn{
+        border:none;
+        border-radius: 10px;
+        color:white;
+        background-color: var(--heading);
+        padding:0.5rem 0.7rem;
+        margin-left:1rem;
+        margin-top:1rem;
+        font-size: 5px;
+    }
+    .cart-updatebtn{
+        border:none;
+        border-radius: 10px;
+        color:white;
+        background-color: var(--heading);
+        padding:0.2rem 0.4rem;
+        margin-left:0.4rem;
+        margin-top:0.5rem;
+        font-size: 6px;
+    }
+    .update-form-input{
+        font-size:12px;
+    }
+
+    .goto-shop-btn{
+        color:brown;
+        font-size: 12px;
+        font-weight: bolder;
+    }
+    .cbtn{
+        border:none;
+        border-radius: 5px;
+        background-color: rgb(6, 110, 6);
+        color:white;
+        padding:0.3rem 0.5rem;
+
+    }
+    .cart-items-total{
+        background-color: var(--highlightbg);
+    }
+    
+}
 /* Cart page end*/
 
