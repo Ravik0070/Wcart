@@ -190,6 +190,9 @@ body{
         width:100%;
         height:30vh;
     }
+    .product-detail-category{
+        font-size: 20px;
+    }
 }
 /* detail page end */
 
@@ -517,6 +520,38 @@ body{
     background-color: rgb(29, 99, 29);
     color:white;
     font-weight: bold;
+}
+@media(max-width:550px){
+    .form-div{
+        padding:0.5em 0.1em;
+        font-size: 15px ;
+        color:var(--anchor);
+        width:100%;
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+        align-items: center;
+    }
+    .form-div input{
+        width:50%;
+        padding:0.3em 0.1em;
+        margin-bottom :0.6em;
+        border: none;
+        border-radius: 5px;
+        box-shadow:2px 2px  rgb(243, 112, 112);
+    
+    }
+    .place-orderbtn{
+        padding: 1em 0.5em;
+        background-color: rgb(71, 148, 71);
+        color:white;
+        transition: all 1s ease;
+    }
+    .place-orderbtn:hover{
+        background-color: rgb(29, 99, 29);
+        color:white;
+        font-weight: bold;
+    }
 }
 /* Checkout page end */
 
