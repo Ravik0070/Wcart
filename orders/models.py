@@ -1,5 +1,3 @@
-from tkinter import Widget
-from turtle import textinput
 from django.db import models
 from django.db.models.deletion import CASCADE
 from shop.models import Product
