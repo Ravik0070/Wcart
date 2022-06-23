@@ -26,15 +26,17 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG')
 
-ALLOWED_HOSTS = ['*',]
+ALLOWED_HOSTS = ['*', ]
 
 
 # Application definition
 
 INSTALLED_APPS = [
+
     'shop',
     'cart',
     'orders',
+    'crispy_forms',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -77,6 +79,8 @@ WSGI_APPLICATION = 'myshop.wsgi.application'
 
 CART_SESSION_ID = 'cart'
 
+
+CRISPY_TEMPLATE_PACK = 'bootstrap'
 
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
